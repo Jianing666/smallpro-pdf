@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PDF文件预览</title>
+	<link  rel="stylesheet"  href="./css/pdfh5.css"/>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+	<script type="text/javascript" src="./js/pdf.js"></script>
+	<script type="text/javascript" src="./js/pdf.worker.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./js/pdfh5.js"></script>
+	
+</head>
+<body>
+	<div id="demo"></div>
+</body>
+<script>
+	function getQueryString(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+	}
+	let pdfUrl = getQueryString('fileUrl')
+	// console.log(pdfUrl,'pdfUrl')
+	var pdfh5 = new Pdfh5('#demo', {
+		pdfurl: pdfurl
+	});
+	// console.log(Pdfh5,'Pdfh5')
+	// console.log(new Pdfh5,'new Pdfh5')
+</script>
+</html>
